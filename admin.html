@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+  <link rel="icon" href="foto/title-logo.png" type="image/icon">
+  <title>Admin Panel - Mototrade</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .admin-container {
+      max-width: 1400px;
+      margin: 120px auto 50px;
+      padding: 30px;
+    }
+    .admin-header {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .admin-header h2 {
+      margin: 0;
+      font-weight: 700;
+    }
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .stat-card i {
+      font-size: 40px;
+      color: #328bce;
+      margin-bottom: 15px;
+    }
+    .stat-card h3 {
+      font-size: 32px;
+      color: #353535;
+      margin: 0;
+      font-weight: 700;
+    }
+    .stat-card p {
+      color: #8d8d8d;
+      margin: 5px 0 0 0;
+    }
+    .bookings-table {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      background: #f8f9fa;
+      padding: 15px;
+      text-align: left;
+      font-weight: 700;
+      color: #353535;
+      border-bottom: 2px solid #dee2e6;
+    }
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    tr:hover {
+      background: #f8f9fa;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .status-pending {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+    .status-confirmed {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .status-cancelled {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    .btn-logout {
+      background-color: white;
+      color: #dc3545;
+      padding: 8px 20px;
+      border: 2px solid white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-logout:hover {
+      background-color: #f8f9fa;
+    }
+    .btn-action {
+      padding: 6px 12px;
+      margin: 0 3px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .btn-confirm {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-confirm:hover {
+      background-color: #218838;
+    }
+    .btn-cancel {
+      background-color: #dc3545;
+      color: white;
+    }
+    .btn-cancel:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="foto/logo.gif" alt="Logo" style="width: 150px; height: 50px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a style="color: #dc3545;" class="nav-link active" href="admin.html">Admin Panel</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ADMIN PANEL -->
+  <div class="container">
+    <div class="admin-container">
+      <div class="admin-header">
+        <h2><i class="fas fa-user-shield"></i> Admin Panel</h2>
+        <p>Manage all bookings and view statistics</p>
+      </div>
+
+      <!-- Statistics -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <i class="fas fa-calendar-check"></i>
+          <h3 id="totalBookings">0</h3>
+          <p>Total Bookings</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-clock"></i>
+          <h3 id="pendingBookings">0</h3>
+          <p>Pending</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-check-circle"></i>
+          <h3 id="confirmedBookings">0</h3>
+          <p>Confirmed</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-euro-sign"></i>
+          <h3 id="totalRevenue">€0</h3>
+          <p>Total Revenue</p>
+        </div>
+      </div>
+
+      <!-- Bookings Table -->
+      <div class="bookings-table">
+        <h3 style="margin-bottom: 20px;"><i class="fas fa-list"></i> All Bookings</h3>
+        <div id="bookingsTableContainer">
+          <div class="text-center" style="padding: 40px;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 40px; color: #328bce;"></i>
+            <p style="margin-top: 20px; color: #8d8d8d;">Loading bookings...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Check if user is logged in
+    fetch('backend/check_session.php')
+      .then(response => response.json())
+      .then(data => {
+        if (!data.logged_in) {
+          window.location.href = 'login.html';
+        } else {
+          loadAllBookings();
+        }
+      });
+
+    function loadAllBookings() {
+      fetch('backend/admin_bookings.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            displayBookings(data.bookings);
+            updateStatistics(data.bookings);
+          }
+        })
+        .catch(error => {
+          document.getElementById('bookingsTableContainer').innerHTML = `
+            <div class="alert alert-danger">
+              Error loading bookings. Please refresh the page.
+            </div>
+          `;
+        });
+    }
+
+    function displayBookings(bookings) {
+      const container = document.getElementById('bookingsTableContainer');
+      
+      if (bookings.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #8d8d8d; padding: 40px;">No bookings yet.</p>';
+        return;
+      }
+
+      let tableHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Car</th>
+              <th>Pick-up Date</th>
+              <th>Return Date</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      bookings.forEach(booking => {
+        const pickupDate = new Date(booking.pickup_date).toLocaleDateString();
+        const returnDate = new Date(booking.return_date).toLocaleDateString();
+        const statusClass = `status-${booking.status}`;
+        
+        // Action buttons based on status
+        let actionButtons = '';
+        if (booking.status === 'pending') {
+          actionButtons = `
+            <button onclick="updateStatus(${booking.id}, 'confirmed')" class="btn-action btn-confirm" title="Confirm Booking">
+              <i class="fas fa-check"></i> Confirm
+            </button>
+            <button onclick="updateStatus(${booking.id}, 'cancelled')" class="btn-action btn-cancel" title="Cancel Booking">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          `;
+        } else if (booking.status === 'confirmed') {
+          actionButtons = `
+            <button onclick="updateStatus(${booking.id}, 'cancelled')" class="btn-action btn-cancel" title="Cancel Booking">
+              <i class="fas fa-times"></i> Cancel
+            </button>
+          `;
+        } else {
+          actionButtons = '<span style="color: #8d8d8d; font-size: 12px;">No actions</span>';
+        }
+        
+        tableHTML += `
+          <tr id="booking-${booking.id}">
+            <td>#${booking.id}</td>
+            <td>${booking.first_name} ${booking.last_name}</td>
+            <td><strong>${booking.car_name}</strong></td>
+            <td>${pickupDate}</td>
+            <td>${returnDate}</td>
+            <td><strong>€${parseFloat(booking.total_cost).toLocaleString()}</strong></td>
+            <td><span class="status-badge ${statusClass}" id="status-${booking.id}">${booking.status}</span></td>
+            <td>
+              <a href="mailto:${booking.email}" style="color: #328bce; margin-right: 10px;" title="Send Email"><i class="fas fa-envelope"></i></a>
+              <a href="tel:${booking.phone}" style="color: #328bce;" title="Call"><i class="fas fa-phone"></i></a>
+            </td>
+            <td id="actions-${booking.id}">${actionButtons}</td>
+          </tr>
+        `;
+      });
+
+      tableHTML += '</tbody></table>';
+      container.innerHTML = tableHTML;
+    }
+
+    function updateStatistics(bookings) {
+      const total = bookings.length;
+      const pending = bookings.filter(b => b.status === 'pending').length;
+      const confirmed = bookings.filter(b => b.status === 'confirmed').length;
+      const revenue = bookings.reduce((sum, b) => sum + parseFloat(b.total_cost), 0);
+
+      document.getElementById('totalBookings').textContent = total;
+      document.getElementById('pendingBookings').textContent = pending;
+      document.getElementById('confirmedBookings').textContent = confirmed;
+      document.getElementById('totalRevenue').textContent = '€' + revenue.toLocaleString();
+    }
+
+    function updateStatus(bookingId, newStatus) {
+      const confirmMessage = newStatus === 'confirmed' 
+        ? 'Confirm this booking?' 
+        : 'Cancel this booking?';
+      
+      if (!confirm(confirmMessage)) return;
+      
+      const formData = new FormData();
+      formData.append('booking_id', bookingId);
+      formData.append('status', newStatus);
+      
+      fetch('backend/update_booking_status.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Reload all bookings to refresh the view
+          loadAllBookings();
+          alert('Status updated successfully!');
+        } else {
+          alert('Failed to update status: ' + data.message);
+        }
+      })
+      .catch(error => {
+        alert('An error occurred. Please try again.');
+      });
+    }
+
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'backend/logout.php';
+      }
+    }
+  </script>
+</body>
+</html>

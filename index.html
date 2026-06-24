@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="icon" href="foto/title-logo.png" type="image/icon">
+  <title>Mototrade</title>
+  <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+    <!-- NAVBAR and BANNER -->
+<header id="home">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><img src="foto/logo.gif" alt="Logo" style="width: 150px; height: 50px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="listing.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Listing
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="new-cars.html">New Cars</a></li>
+            <li><a class="dropdown-item" href="used-cars.html">Used Cars</a></li>
+            <li><a class="dropdown-item" href="electric-cars.html">Electric Cars</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <!-- Dynamic Login/User Section -->
+        <li class="nav-item" id="navAuthSection">
+          <a class="nav-link" href="login.html" style="color: #328bce; font-weight: 700;">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="position-relative" style="max-width: 420px;">
+  <input id="carSearchInput" class="form-control" type="search"
+         placeholder="Search cars (e.g., BMW, Audi...)"
+         autocomplete="off">
+  <div id="carSearchDropdown"
+       class="list-group position-absolute w-100"
+       style="z-index: 9999; display:none; max-height: 320px; overflow:auto;">
+  </div>
+</div>
+</nav>
+  
+     <div class="section_container header_container">
+      <h1>MOTOTRADE</h1>
+      <p>Explore the world of vehicles with Mototrade.</p>
+    </div>
+  </header>
+    <!-- NAVBAR and BANNER END -->
+
+  <!--Explore Cars-->
+  <section class="car spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Our Cars</span>
+                    <h2>Best Vehicle Offers</h2>
+                </div>
+                <ul class="filter__controls">
+                    <li class="active" data-filter=".new">New Cars</li>
+                    <li data-filter=".used">Used Cars</li>
+                    <li data-filter=".electric">Electric Cars</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row car-filter">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix used">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/Used/VWJetta.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2015</div>
+                            <h5><a href="vwjetta.html">VW Jetta 2.0 TDI</a></h5>
+                            <ul>
+                                <li><span>100,000</span> mi</li>
+                                <li>Auto</li>
+                                <li><span>150</span> hp</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option">Used</span>
+                            <h6>€9,000</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix new">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/New/Mercedes53.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2022</div>
+                            <h5><a href="mercedes53.html">Mercedes-Benz GT 53 AMG</a></h5>
+                            <ul>
+                             
+                                <li><span>👤 <span> 4 | <span>🧳 </span> 2</li>
+                                <li>Automatic</li>
+                                <li><span>Luxury </span> SUV</li>
+                                 <li><span>⛽ </span> Petrol</li>
+                            
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option sale">Reserve Now </span>
+                            <h6 class="cardbutton">€250 / dite</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix electric">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/Electric/Citroen.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2021</div>
+                            <h5><a href="citroen.html">Citroen C5</a></h5>
+                            <ul>
+                                <li><span>23.000</span> mi</li>
+                                <li>Auto</li>
+                                <li><span>130</span> hp</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option electric">Electric</span>
+                            <h6>€39,000</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix used">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/Used/BMWX5.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2015</div>
+                            <h5><a href="bmwx5.html">BMW X5 35i</a></h5>
+                            <ul>
+                                <li><span>122.000</span> mi</li>
+                                <li>Auto</li>
+                                <li><span>306</span> hp</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option ">Used</span>
+                            <h6>€19,800</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix new">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/New/AudiQ8.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2023</div>
+                            <h5><a href="audiq8.html">Audi Q8 50 TDI</a></h5>
+                            <ul>
+                                <li><span>👤 <span> 5 | <span>🧳 </span> 3</li>
+                                <li>Automatic</li>
+                                <li><span>Luxury</span> SUV</li>
+                                 <li><span>⛽ </span> Diesel</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option sale">Reserve Now</span>
+                            <h6 class="cardbutton">€200 / dite</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix electric">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/Electric/VWG8.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2021</div>
+                            <h5><a href="vwg8.html">VW Golf 8 R</a></h5>
+                            <ul>
+                                <li><span>31,000</span> mi</li>
+                                <li>Auto</li>
+                                <li><span>350</span> hp</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option electric">Electric</span>
+                            <h6>€40,900</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix used">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/Used/PorscheCay.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2016</div>
+                            <h5><a href="porschecay.html">Porsche Cayenne</a></h5>
+                            <ul>
+                                <li><span>98.000</span> mi</li>
+                                <li>Auto</li>
+                                <li><span>245</span> hp</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option">Used</span>
+                            <h6>€29,000</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix new">
+                <div class="car__item">
+                    <div class="car__item__pic__slider owl-carousel">
+                        <img src="cars/New/BMW740.webp" alt="">
+                    </div>
+                    <div class="car__item__text">
+                        <div class="car__item__text__inner">
+                            <div class="label-date">2024</div>
+                            <h5><a href="bmw740.html">BMW 740Ld M-Packet</a></h5>
+                             <ul>
+                                <li><span>👤 <span> 5 | <span>🧳 </span> 3</li>
+                                <li>Automatic</li>
+                                <li> Luxury <span> Suv</span> </li>
+                                 <li><span>⛽ </span> Diesel</li>
+                            </ul>
+                        </div>
+                        <div class="car__item__price">
+                            <span class="car-option sale">Reserve Now</span>
+                            <h6 class="cardbutton">€220 / dite</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix electric">
+              <div class="car__item">
+                  <div class="car__item__pic__slider owl-carousel">
+                      <img src="cars/Electric/ToyotaRAV.webp" alt="">
+                  </div>
+                  <div class="car__item__text">
+                      <div class="car__item__text__inner">
+                          <div class="label-date">2022</div>
+                          <h5><a href="toyotarav.html">Toyota RAV4</a></h5>
+                          <ul>
+                              <li><span>15,000</span> mi</li>
+                              <li>Auto</li>
+                              <li><span>700</span> hp</li>
+                          </ul>
+                      </div>
+                      <div class="car__item__price">
+                          <span class="car-option electric">Electric</span>
+                          <h6>€26,000</h6>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 new used electric">
+            <div class="car__item">
+                <div class="car__item__text" style="border: none;">
+                    <div style="height: 306px;text-align: center; padding-top: 220px;" class="car__item__text__inner">
+                        <h2><a style="color: black;" href="new-cars.html">Show More</a>  <i class="fa-solid fa-arrow-right"></i></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+  </div>
+</section>
+<!-- =========================
+     ROAD TRIP PLANNER + TOUR PACKAGES
+========================= -->
+<section class="container my-5" id="roadtrip">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-7">
+      <h3 style="color:#328bce; font-weight:800;">🚗 Road Trip Planner</h3>
+      <p class="text-muted">
+        Choose your route (Tirana → Stop → Destination) and we’ll estimate km, fuel, total cost, and recommend cars.
+      </p>
+
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label class="form-label fw-bold">From</label>
+          <select class="form-select" id="rtFrom">
+            <option value="Tirane">Tirana</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Stop 1 (optional)</label>
+          <select class="form-select" id="rtStop1">
+            <option value="">(none)</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label fw-bold">To</label>
+          <select class="form-select" id="rtTo">
+            <option value="">Select city...</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-3 d-flex gap-2 flex-wrap">
+        <button class="btn btn-primary" id="rtCalcBtn" style="background:#328bce;border:none;">
+          Calculate
+        </button>
+        <button class="btn btn-outline-secondary" id="rtResetBtn">Reset</button>
+      </div>
+
+      <div class="mt-4 p-3 rounded border" style="background:#f7f7f7;">
+        <div class="row g-2">
+          <div class="col-md-4"><strong>Total km:</strong> <span id="rtKm">-</span></div>
+          <div class="col-md-4"><strong>Fuel estimate:</strong> <span id="rtFuel">-</span></div>
+          <div class="col-md-4"><strong>Total cost:</strong> <span id="rtCost">-</span></div>
+        </div>
+
+        <div class="mt-3">
+          <strong>Recommended cars:</strong>
+          <div class="row g-3 mt-1" id="rtRecs"></div>
+          <small class="text-muted d-block mt-2">
+            *Demo logic based on distance + fuel + capacity.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 text-center">
+      <!-- Optional: if you have a map image -->
+      <img src="foto/albania-map.png" class="img-fluid rounded" alt="Albania map" style="max-height:360px;">
+      <div class="text-muted small mt-2">Albania Trip Planner</div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5" id="guides">
+  <h3 style="color:#328bce; font-weight:800;">🌍 Tour Packages + Recommended Car</h3>
+  <p class="text-muted">Choose a ready-made itinerary and we auto-calculate everything.</p>
+
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="p-3 border rounded h-100" style="background:white;">
+        <h5>🏖️ Beach Escape (3 days)</h5>
+        <p class="text-muted mb-2">Tirana → Vlore → Sarande</p>
+        <button class="btn btn-outline-primary w-100 guideBtn" data-stop="Vlore" data-to="Sarande">
+          Use this package
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="p-3 border rounded h-100" style="background:white;">
+        <h5>🏔️ Alps Adventure (3 days)</h5>
+        <p class="text-muted mb-2">Tirana → Shkoder → Theth</p>
+        <button class="btn btn-outline-primary w-100 guideBtn" data-stop="Shkoder" data-to="Theth">
+          Use this package
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="p-3 border rounded h-100" style="background:white;">
+        <h5>🏛️ Culture Route (3 days)</h5>
+        <p class="text-muted mb-2">Tirana → Berat → Gjirokaster</p>
+        <button class="btn btn-outline-primary w-100 guideBtn" data-stop="Berat" data-to="Gjirokaster">
+          Use this package
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Explore Cars END-->
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+    <div class="row" style="--bs-gutter-x: 0;">
+      <div class="col-lg-12">
+          <div class="section-title" style="padding-top: 40px; margin-bottom: 30px;">
+            <h2>Why choose <em style="color: #328bce;">us?</em></h2>
+          </div>
+      </div>
+  </div>
+
+  <div class="row" style="--bs-gutter-x: 0;">
+      <div class="col-lg-3 col-sm-6">
+          <div class="cs-item">
+            <img src="foto/why-us1.png">
+              <h4>New Cars</h4>
+              <p>Experience the thrill of driving into the future. Our selection of new cars offers the latest in technology, safety, and design. Find your perfect match and embark on your next adventure with confidence.</p>
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6">
+          <div class="cs-item">
+              <img src="foto/why-us2.png">
+              <h4>Best prices</h4>
+              <p>Unlock unbeatable value with us. We understand the importance of getting the best deal when it comes to buying or selling a car. With transparent pricing and fair negotiations, rest assured you're getting the most competitive prices in the market.</p>
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6">
+          <div class="cs-item">
+              <img src="foto/why-us3.png">
+              <h4>Electric cars</h4>
+              <p>Embrace sustainability without compromising performance. Our range of electric cars offers technology, eco-friendly driving, and a commitment to a greener future. Join the electric revolution and experience driving in a whole new way.</p>
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-sm-6">
+          <div class="cs-item">
+              <img src="foto/why-us4.png">
+              <h4>Buy & Sell with Us</h4>
+              <p>Simplify your car trade journey with us. Whether you're looking to buy or sell, our platform offers a seamless experience from start to finish. Trust in our expertise, reliability, and dedication to making your car trade process smooth and rewarding.</p>
+          </div>
+      </div>
+  </div>
+</div>
+  </section>
+  <!-- WHY CHOOSE US END -->
+
+  <!-- BLOG -->
+  <div class="blog" style="padding-top: 70px;">
+    <h2>BLOG</h2>
+  </div>
+  <div class="card-container">
+
+    <div class="card" style="width: 28rem;">
+      <a href="blog-(1).html" style="text-decoration: none; color: inherit;">
+        <img src="foto/blog-1.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: black;">2019 Bentley Flying Spur W12 Review</h5>
+          <p class="card-text">The 2019 Flying Spur was not only the fastest Bentley when it first came out, sharing first place with the Continental GT, but also the fastest sedan and four door car ever made. And yet, that's only scratching the surface.</p>
+          <p class="card-text">Published on Apr 30, 2025</p>
+          <a href="blog-(1).html" class="btn btn-primary" style="background-color: #328bce; margin-top: 20px;">Read more</a>
+        </div>
+      </a>
+    </div>
+
+    <div class="card" style="width: 28rem;">
+      <a href="blog-(2).html" style="text-decoration: none; color: inherit;">
+        <img src="foto/blog-2.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: black;">Aston Martin DB7 GT Review</h5>
+          <p class="card-text">One of the ultimate sedans of the past decade became even better when Aston Martin put an S badge to the Rapide. The S designation took the Rapide over 200 mph and made it accelerate like a true supercar.</p>
+          <p class="card-text">Published on May 07, 2025</p>
+          <a href="blog-(2).html" class="btn btn-primary" style="background-color: #328bce; margin-top: 20px;">Read more</a>
+        </div>
+      </a>
+    </div>
+
+    <div class="card" style="width: 28rem;">
+      <a href="blog-(3).html" style="text-decoration: none; color: inherit;">
+        <img src="foto/blog-3.webp" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: black;">2024 Land Rover Velar Review</h5>
+          <p class="card-text">The Velar was intended to compete with smaller premium SUVs, mainly the BMW X4, Porsche Macan, and to some degree the Mercedes GLC, and it has done that fairly successfully.</p>
+          <p class="card-text">Published on Mar 29, 2025</p>
+          <a href="blog-(3).html" class="btn btn-primary" style="background-color: #328bce; margin-top: 20px;">Read more</a>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- BLOG END -->
+
+<!--Promotion-->
+<div class="container">
+  <div class="row" style="margin-bottom: 30px; padding-top: 20px;">
+    <div class="col-md-6" style="position: relative;">
+      <div style="position: relative;">
+        <img src="cars/Discount.png" class="img-fluid" alt="Car">
+        <div class="offer-text">
+          <h5 style="font-size: 40px; color: white;" class="card-title">Special Limited Time Offer!</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <p class="card-text">Get $2000 off on selected models. Don't miss out on this exclusive deal! This offer is valid only for a limited time.</p>
+        <p class="card-text">Experience the thrill of driving our latest models. Whether you're looking for a sleek sedan, a spacious SUV, or a powerful truck, we have the perfect vehicle for you. Our cars are equipped with state-of-the-art features to ensure safety, comfort, and performance.</p>
+        <div class="discount-text">
+          <p class="text-danger">Limited Offer!</p>
+          <p class="text-muted">This offer expires on July 29th, 2025. Hurry up and grab your dream car!</p>
+        </div>
+        <a href="contact.html" class="btn">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Promotion END-->
+  
+  <!--Footer-->
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="container">
+      <div class="footer__contact">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="footer__contact__title">
+              <h2 style="color: #328bce;">Contact Us Now!</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="footer__contact__option">
+              <div class="option__item">
+                <i class="fa fa-phone"></i> 
+                <a href="tel:+355686789054">(+355) 68 678 9054</a>
+              </div>
+              <div class="option__item email">
+                <i class="fa fa-envelope"></i> 
+                <a href="mailto:info@mototrade.com">info@mototrade.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 style="color: #328bce" class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Mototrade
+          </h6>
+          <p>
+            Mototrade is authorised and regulated by the Financial Conduct Authority.
+            Mototrade is a credit broker and not a lender. Terms and conditions apply.
+            Available to 18s and over. You may need a guarantor or joint hirer.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" class="youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 style="color: #328bce" class="text-uppercase fw-bold mb-4">
+            Useful Links
+          </h6>
+          <p><a href="index.html" class="text-reset">Home</a></p>
+          <p><a href="about.html" class="text-reset">About</a></p>
+          <p><a href="blog.html" class="text-reset">Blog</a></p>
+          <p><a href="contact.html" class="text-reset">Contact</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 style="color: #328bce;" class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p><i class="fas fa-home me-3"></i> Autostrada Durrës–Tiranë, Km5</p>
+          <p><i class="fas fa-envelope me-3"></i> info@mototrade.com</p>
+          <p><i class="fas fa-phone me-3"></i> (+355) 68 678 9054</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+    
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2026 Copyright | All rights reserved by 
+    <span class="fw-bold">Mototrade</span>
+  </div>
+</footer>
+  <!--Footer END-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/mixitup.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+fetch('backend/check_session.php')
+  .then(response => response.json())
+  .then(data => {
+    const navAuthSection = document.getElementById('navAuthSection');
+    if (navAuthSection && data.logged_in) {
+      const firstName = data.user.name.split(' ')[0];
+      navAuthSection.innerHTML = `
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #328bce; font-weight: 700;">
+            <i class="fas fa-user-circle"></i> Hi, ${firstName}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-tachometer-alt"></i> My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="backend/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
+        </div>
+      `;
+    }
+  })
+  .catch(error => console.log('Not logged in'));
+</script>
+<script>
+fetch('backend/check_session.php')
+  .then(response => response.json())
+  .then(data => {
+    const navAuthSection = document.getElementById('navAuthSection');
+    if (navAuthSection && data.logged_in) {
+      const firstName = data.user.name.split(' ')[0];
+      navAuthSection.innerHTML = `
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #328bce; font-weight: 700;">
+            <i class="fas fa-user-circle"></i> Hi, ${firstName}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-tachometer-alt"></i> My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="backend/logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
+        </div>
+      `;
+    }
+  })
+  .catch(error => console.log('Not logged in'));
+</script>
+<script>
+document.addEventListener('click', function (e) {
+  const tag = e.target.closest('.car-option');
+  if (!tag) return;
+
+  // Only act on "Reserve Now" buttons, NOT "Used/Electric/New" tags
+  if (!/reserve/i.test(tag.textContent)) return;
+
+  const card = tag.closest('.car__item');
+  if (!card) return;
+
+  const nameEl = card.querySelector('.car__item__text__inner h5 a');
+  const priceEl = card.querySelector('.car__item__price h6');
+
+  const carName = (nameEl?.textContent || '').trim();
+  const priceText = (priceEl?.textContent || '').trim();
+
+  // Extract first number (works for "€200 / dite", "€35 / day", etc.)
+  const match = priceText.match(/(\d+(?:[.,]\d+)*)/);
+  if (!carName || !match) return;
+
+  // Normalize number: remove thousands separators and convert comma decimal if any
+  const normalized = match[1].replace(/\./g, '').replace(',', '.');
+  const price = parseFloat(normalized) || 0;
+
+  window.location.href =
+    `booking.html?car=${encodeURIComponent(carName)}&price=${encodeURIComponent(price)}`;
+});
+</script>
+<script>
+(async () => {
+  // Cities shown to users
+  const CITIES = ["Durres","Elbasan","Shkoder","Theth","Vlore","Korce","Berat","Gjirokaster","Sarande"];
+
+  // Distances (km) - demo, good enough for presentation
+  const DIST = {
+    "Tirane-Durres": 35,
+    "Tirane-Elbasan": 45,
+    "Tirane-Shkoder": 100,
+    "Tirane-Theth": 180,
+    "Tirane-Vlore": 155,
+    "Tirane-Korce": 165,
+    "Tirane-Berat": 120,
+    "Tirane-Gjirokaster": 230,
+    "Tirane-Sarande": 280,
+    "Vlore-Sarande": 120,
+    "Shkoder-Theth": 75,
+    "Berat-Gjirokaster": 140,
+    "Sarande-Theth": 420
+  };
+
+  // Fuel prices (you can tweak)
+  const PRICES = { dieselPerLiter: 1.75, petrolPerLiter: 1.85, kwh: 0.22 };
+
+  // Consumption per 100km (demo)
+  const CONSUMPTION = { suv: 8.5, sedan: 7.0, city: 5.5, wagon: 7.2, electric: 18 };
+
+  const $ = (id) => document.getElementById(id);
+
+  function dist(a, b) {
+    const k1 = `${a}-${b}`, k2 = `${b}-${a}`;
+    return DIST[k1] ?? DIST[k2] ?? 160; // fallback
+  }
+
+  function routeKm(from, stop, to) {
+    if (stop) return dist(from, stop) + dist(stop, to);
+    return dist(from, to);
+  }
+
+  function isMountain(stop, to) {
+    const s = (stop || "").toLowerCase();
+    const t = (to || "").toLowerCase();
+    return s.includes("theth") || t.includes("theth") || s.includes("korce") || t.includes("korce") || s.includes("gjirokaster") || t.includes("gjirokaster");
+  }
+
+  function estimateFuel(km, car) {
+    if (car.fuel === "electric") {
+      const kwh = (CONSUMPTION.electric / 100) * km;
+      return { fuelText: `${kwh.toFixed(1)} kWh`, fuelCost: kwh * PRICES.kwh };
+    }
+    const lPer100 = CONSUMPTION[car.category] ?? CONSUMPTION.sedan;
+    const liters = (lPer100 / 100) * km;
+    const perLiter = (car.fuel === "diesel") ? PRICES.dieselPerLiter : PRICES.petrolPerLiter;
+    return { fuelText: `${liters.toFixed(1)} L`, fuelCost: liters * perLiter };
+  }
+
+  function scoreCar(car, km, mountain) {
+    let s = 0;
+
+    // Long trip logic
+    if (km >= 170) {
+      if ((car.seats || 0) >= 5) s += 3;
+      if ((car.bags || 0) >= 3) s += 3;
+      if (car.fuel === "diesel") s += 4;
+      if (car.fuel === "hybrid") s += 3;
+      if (car.fuel === "electric") s -= 1;
+    } else {
+      // Short trip logic
+      if (car.fuel === "electric") s += 4;
+      if (car.category === "city") s += 2;
+      if (car.fuel === "hybrid") s += 2;
+    }
+
+    // Mountain = SUV bias
+    if (mountain) {
+      if (car.category === "suv") s += 4;
+      if (car.fuel === "diesel") s += 2;
+      if ((car.seats || 0) >= 7) s += 1;
+    }
+
+    // Price/day slight weight
+    s += Math.max(0, (250 - car.pricePerDay) / 60);
+
+    return s;
+  }
+
+  function renderRecs(list) {
+    const el = $("rtRecs");
+    if (!el) return;
+
+    el.innerHTML = list.map(c => `
+      <div class="col-md-6">
+        <a href="${c.url}" class="text-decoration-none">
+          <div class="p-3 rounded border h-100" style="background:white;">
+            <div class="d-flex justify-content-between gap-2">
+              <strong style="color:#111;">${c.name}</strong>
+              <span style="color:#328bce; font-weight:800;">€${c.pricePerDay}/day</span>
+            </div>
+            <div class="text-muted small mt-1">
+              👤 ${c.seats} • 🧳 ${c.bags} • ${c.fuel}
+            </div>
+          </div>
+        </a>
+      </div>
+    `).join('');
+  }
+
+  // Load cars from JSON
+  let cars = [];
+  try {
+    const res = await fetch("data/cars.json");
+    cars = await res.json();
+  } catch (e) {
+    console.log("Could not load data/cars.json");
+    return;
+  }
+
+  // Fill dropdowns
+  const stopSel = $("rtStop1");
+  const toSel = $("rtTo");
+  if (!stopSel || !toSel) return;
+
+  CITIES.forEach(c => {
+    const o1 = document.createElement("option");
+    o1.value = c; o1.textContent = c;
+    stopSel.appendChild(o1);
+
+    const o2 = document.createElement("option");
+    o2.value = c; o2.textContent = c;
+    toSel.appendChild(o2);
+  });
+
+  function calculate() {
+    const from = "Tirane";
+    const stop = stopSel.value || "";
+    const to = toSel.value || "";
+
+    if (!to) { alert("Select destination city"); return; }
+
+    const km = routeKm(from, stop, to);
+    const mountain = isMountain(stop, to);
+
+    $("rtKm").textContent = `${km} km`;
+
+    const ranked = [...cars]
+      .map(c => ({ c, s: scoreCar(c, km, mountain) }))
+      .sort((a, b) => b.s - a.s)
+      .slice(0, 4)
+      .map(x => x.c);
+
+    if (ranked.length) {
+      const best = ranked[0];
+      const { fuelText, fuelCost } = estimateFuel(km, best);
+      $("rtFuel").textContent = fuelText;
+
+      const days = km > 200 ? 3 : 2; // demo
+      const total = (best.pricePerDay * days) + fuelCost;
+      $("rtCost").textContent = `€${total.toFixed(0)} (≈ ${days} days + fuel)`;
+    } else {
+      $("rtFuel").textContent = "-";
+      $("rtCost").textContent = "-";
+    }
+
+    renderRecs(ranked);
+  }
+
+  $("rtCalcBtn")?.addEventListener("click", calculate);
+
+  $("rtResetBtn")?.addEventListener("click", () => {
+    stopSel.value = "";
+    toSel.value = "";
+    $("rtKm").textContent = "-";
+    $("rtFuel").textContent = "-";
+    $("rtCost").textContent = "-";
+    renderRecs([]);
+  });
+
+  // Tour packages: auto fill + calculate
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".guideBtn");
+    if (!btn) return;
+
+    const stop = btn.getAttribute("data-stop") || "";
+    const to = btn.getAttribute("data-to") || "";
+
+    stopSel.value = stop;
+    toSel.value = to;
+
+    $("roadtrip")?.scrollIntoView({ behavior: "smooth" });
+    setTimeout(calculate, 350);
+  });
+})();
+</script>
+<script>
+(() => {
+  const input = document.getElementById('carSearchInput');
+  const dropdown = document.getElementById('carSearchDropdown');
+  if (!input || !dropdown) return;
+
+  let cars = [];
+  let loaded = false;
+
+  async function loadCars() {
+    if (loaded) return cars;
+    const res = await fetch('data/cars.json');
+    cars = await res.json();
+    loaded = true;
+    return cars;
+  }
+
+  function hideDropdown() {
+    dropdown.style.display = 'none';
+    dropdown.innerHTML = '';
+  }
+
+  function normalize(s) {
+    return (s || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // remove accents
+      .trim();
+  }
+
+  function getMatches(query, list) {
+    const q = normalize(query);
+    if (!q || q.length < 1) return [];
+
+    // Prioritize: startsWith, then includes
+    const starts = [];
+    const includes = [];
+
+    for (const c of list) {
+      const name = normalize(c.name);
+      if (name.startsWith(q)) starts.push(c);
+      else if (name.includes(q)) includes.push(c);
+    }
+
+    return [...starts, ...includes].slice(0, 8);
+  }
+
+  function render(items) {
+    if (!items.length) return hideDropdown();
+
+    dropdown.innerHTML = items.map(c => `
+      <a href="${c.url}" class="list-group-item list-group-item-action">
+        <div class="d-flex justify-content-between align-items-start gap-2">
+          <div>
+            <div style="font-weight:700;">${c.name}</div>
+            <small class="text-muted">
+              👤 ${c.seats ?? '-'} • 🧳 ${c.bags ?? '-'} • ${c.fuel ?? 'unknown'} • ${c.transmission ?? ''}
+            </small>
+          </div>
+          <div style="font-weight:800; color:#328bce;">€${c.pricePerDay}/day</div>
+        </div>
+      </a>
+    `).join('');
+
+    dropdown.style.display = 'block';
+  }
+
+  // Load cars on focus (so first keystroke is instant)
+  input.addEventListener('focus', async () => {
+    try { await loadCars(); } catch (e) {}
+  });
+
+  input.addEventListener('input', async () => {
+    const val = input.value;
+    if (!val) return hideDropdown();
+
+    try {
+      const list = await loadCars();
+      const matches = getMatches(val, list);
+      render(matches);
+    } catch (e) {
+      hideDropdown();
+      console.log('Search error:', e);
+    }
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && e.target !== input) hideDropdown();
+  });
+
+  // Keyboard UX (optional but nice)
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideDropdown();
+  });
+})();
+</script>
+<style>.car__item__price .car-option { cursor: pointer; }</style>
+</body>
+</html>
